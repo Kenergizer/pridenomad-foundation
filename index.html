@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrideNomad Foundation — LGBTQ+ Freedom Intelligence</title>
+  <meta name="description" content="Free research, destination guides, and expat intelligence for LGBTQ+ adults exploring a location-independent life. Published by the PrideNomad Foundation, a nonprofit.">
+  <link rel="canonical" href="https://pridenomadFoundation.com/">
+  <meta property="og:title" content="PrideNomad Foundation">
+  <meta property="og:description" content="Free LGBTQ+ location intelligence. Where in the world can you actually build the life you want?">
+  <meta property="og:type" content="website">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAFAF7;
+      --warm-white: #FFFFFF;
+      --ink: #1a1a2e;
+      --ink-secondary: #3d3d5c;
+      --muted: #7a7a9a;
+      --border: #e4e2d9;
+      --card-bg: #f4f3ef;
+      --accent: #5B4FD4;
+      --rainbow: linear-gradient(90deg, #FF6B9D 0%, #C44DFF 22%, #4D79FF 44%, #00C896 66%, #FFD700 88%, #FF6B9D 100%);
+      --rainbow-muted: linear-gradient(90deg, rgba(255,107,157,0.7) 0%, rgba(196,77,255,0.7) 22%, rgba(77,121,255,0.7) 44%, rgba(0,200,150,0.7) 66%, rgba(255,215,0,0.7) 88%);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ── Rainbow bar ── */
+    .rainbow-bar {
+      height: 5px;
+      background: var(--rainbow);
+      width: 100%;
+    }
+
+    /* ── Header ── */
+    header {
+      background-color: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .logo-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .logo-tag {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a {
+      font-size: 15px;
+      color: var(--ink-secondary);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    nav a:hover { color: var(--ink); }
+    .nav-cta {
+      background: var(--ink);
+      color: var(--warm-white) !important;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 14px !important;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .nav-cta:hover { background: var(--ink-secondary) !important; }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 96px 24px 80px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: clamp(36px, 6vw, 62px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero .subhead {
+      font-size: clamp(17px, 2.5vw, 20px);
+      color: var(--ink-secondary);
+      line-height: 1.65;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--warm-white);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 16px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--ink-secondary); }
+    .hero-trust {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      letter-spacing: 0.01em;
+    }
+    .hero-secondary {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .hero-secondary a {
+      color: var(--ink-secondary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Proof strip ── */
+    .proof-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--warm-white);
+    }
+    .proof-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .proof-item {
+      padding: 4px 40px;
+      text-align: center;
+    }
+    .proof-item strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 3px;
+    }
+    .proof-item span {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .proof-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--border);
+    }
+
+    /* ── Guides ── */
+    .guides {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .guides h2 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 40px;
+      max-width: 560px;
+    }
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .guide-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 24px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .guide-card:hover {
+      border-color: #c8c6bd;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .guide-card .destination {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .guide-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+    .guide-card .read-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── Mission band ── */
+    .mission {
+      background: var(--ink);
+      color: var(--warm-white);
+    }
+    .mission-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .mission blockquote {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.5;
+      color: #e8e8f0;
+      margin-bottom: 24px;
+    }
+    .mission cite {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      font-style: normal;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── Index band ── */
+    .index-band {
+      background: var(--ink);
+      color: var(--warm-white);
+    }
+    .index-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .index-inner .section-label { color: rgba(255,255,255,0.4); }
+    .index-heading {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--warm-white);
+      margin-bottom: 16px;
+      max-width: 560px;
+    }
+    .index-desc {
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.65;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+    .index-dimensions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .index-dimensions span {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Research band ── */
+    .research-band {
+      background: var(--warm-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .research-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+    .research-heading {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .research-desc {
+      font-size: 17px;
+      color: var(--ink-secondary);
+      line-height: 1.65;
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+    .research-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .research-stat {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+    }
+    .research-stat strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .research-stat span {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .research-link {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .research-link:hover { text-decoration: underline; }
+    @media (max-width: 680px) {
+      .research-stats { grid-template-columns: 1fr; }
+    }
+
+    /* ── Newsletter CTA ── */
+    .newsletter {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 88px 24px;
+      text-align: center;
+    }
+    .rainbow-rule {
+      width: 48px;
+      height: 3px;
+      background: var(--rainbow);
+      border-radius: 2px;
+      margin: 0 auto 36px;
+    }
+    .newsletter h2 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .newsletter p {
+      font-size: 17px;
+      color: var(--ink-secondary);
+      line-height: 1.65;
+      margin-bottom: 40px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .beehiiv-embed {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 36px 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .beehiiv-embed span {
+      display: block;
+      font-size: 12px;
+      margin-top: 8px;
+      opacity: 0.6;
+    }
+    .newsletter-qualifier {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .subscribe-form-placeholder {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .email-input {
+      flex: 1;
+      min-width: 220px;
+      max-width: 320px;
+      padding: 14px 16px;
+      border: 2px solid #c8c6bd;
+      border-radius: 6px;
+      font-size: 15px;
+      color: var(--ink);
+      background: var(--cream);
+      outline: none;
+    }
+    .email-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(91,79,212,0.12); }
+    .subscribe-proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .proof-dot { opacity: 0.4; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--warm-white);
+    }
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-mission {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+    .footer-copy { font-size: 12px; color: #b0afc8; }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .header-inner { flex-direction: column; gap: 16px; }
+      .nav-cta { display: none; }
+      .proof-inner { flex-direction: column; gap: 24px; }
+      .proof-divider { display: none; }
+      .guides-grid { grid-template-columns: 1fr; }
+      .hero { padding: 64px 24px 56px; }
+    }
+
+    @media (min-width: 681px) and (max-width: 900px) {
+      .guides-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rainbow-bar"></div>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-name">PrideNomad Foundation</span>
+        <span class="logo-tag">A nonprofit</span>
+      </a>
+      <nav>
+        <a href="https://pridenomad.com/index">Index</a>
+        <a href="/guides">Guides</a>
+        <a href="/research">Research</a>
+        <a href="/about">About</a>
+        <a href="#subscribe" class="nav-cta">Subscribe free</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="hero-eyebrow">Free LGBTQ+ Location Intelligence</span>
+    <h1>Find LGBTQ+ friendly places to live, work, retire, and belong.</h1>
+    <p class="hero-trust">7,500+ queer adults already reading &nbsp;·&nbsp; Free every Tuesday &nbsp;·&nbsp; Nonprofit</p>
+    <p class="subhead">The world is bigger than the life you were handed. The PrideNomad Foundation produces free research, destination guides, and expat intelligence so you can find out where.</p>
+    <div class="hero-actions">
+      <a href="#subscribe" class="btn-primary">Get the free weekly newsletter</a>
+    </div>
+  </section>
+
+  <!-- Authority strip -->
+  <div class="proof-strip">
+    <div class="proof-inner">
+      <div class="proof-item">
+        <strong>30+</strong>
+        <span>countries analyzed</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <strong>5</strong>
+        <span>research dimensions per destination</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <strong>Free</strong>
+        <span>nonprofit resource</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guides -->
+  <section class="guides">
+    <div class="section-label">Free Research &amp; Guides</div>
+    <h2>Where queer adults are actually going — and what they found</h2>
+    <div class="guides-grid">
+      <a href="/lgbtq-travel/portugal" class="guide-card">
+        <div class="destination">Portugal</div>
+        <h3>LGBTQ+ Travel in Portugal: Why Queer Adults Keep Coming Back</h3>
+        <span class="read-link">Read the guide →</span>
+      </a>
+      <a href="/lgbtq-travel/thailand" class="guide-card">
+        <div class="destination">Thailand</div>
+        <h3>LGBTQ+ Travel Safety in Thailand: What Queer Travelers Actually Need to Know</h3>
+        <span class="read-link">Read the guide →</span>
+      </a>
+      <a href="/lgbtq-travel/mexico" class="guide-card">
+        <div class="destination">Mexico</div>
+        <h3>LGBTQ+ Travel in Mexico: A Queer Adult's Real Guide to the Country</h3>
+        <span class="read-link">Read the guide →</span>
+      </a>
+      <a href="/lgbtq-travel/colombia" class="guide-card">
+        <div class="destination">Colombia</div>
+        <h3>Is Colombia Safe for LGBTQ+ Travelers? What the Data and Community Say</h3>
+        <span class="read-link">Read the guide →</span>
+      </a>
+      <a href="/lgbtq-expat/guide" class="guide-card">
+        <div class="destination">Expat Life</div>
+        <h3>The LGBTQ+ Expat Guide: How to Research, Plan, and Actually Move Abroad</h3>
+        <span class="read-link">Read the guide →</span>
+      </a>
+      <a href="/lgbtq-rights/2026" class="guide-card">
+        <div class="destination">Global Rights</div>
+        <h3>LGBTQ+ Rights by Country 2026: The Index Every Queer Adult Should Read</h3>
+        <span class="read-link">Read the guide →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Index CTA -->
+  <div class="index-band">
+    <div class="index-inner">
+      <div class="section-label" style="margin-bottom:12px;">The PrideNomad Index</div>
+      <h2 class="index-heading">Compare countries. Make real decisions.</h2>
+      <p class="index-desc">The Index is the Foundation's flagship research asset — a living database of LGBTQ+ location intelligence built for people who are seriously considering a move, not just browsing.</p>
+      <div class="index-dimensions">
+        <span>🏛 Legal Rights</span>
+        <span>🛡 Safety</span>
+        <span>🏘 Community</span>
+        <span>🏥 Healthcare</span>
+        <span>💰 Cost of Living</span>
+      </div>
+      <a href="https://pridenomad.com/index" class="btn-primary" style="margin-top:36px; display:inline-block;">Explore the Index →</a>
+    </div>
+  </div>
+
+  <!-- Research credibility -->
+  <div class="research-band">
+    <div class="research-inner">
+      <div class="section-label" style="margin-bottom:12px;">How We Research</div>
+      <h2 class="research-heading">Intelligence, not inspiration.</h2>
+      <p class="research-desc">Every guide we publish draws on legal databases, expat community surveys, and on-the-ground reporting. We cover what other platforms skip: legal status, healthcare access, cost of living, trans-specific safety, and visa pathways.</p>
+      <div class="research-stats">
+        <div class="research-stat">
+          <strong>30+</strong>
+          <span>Countries analyzed</span>
+        </div>
+        <div class="research-stat">
+          <strong>5</strong>
+          <span>Research dimensions per destination</span>
+        </div>
+        <div class="research-stat">
+          <strong>Legal · Safety · Community · Healthcare · Cost</strong>
+          <span>What we cover on every page</span>
+        </div>
+      </div>
+      <a href="https://pridenomad.com/index" class="research-link">Explore the full Index →</a>
+    </div>
+  </div>
+
+  <!-- Newsletter CTA -->
+  <section class="newsletter" id="subscribe">
+    <div class="rainbow-rule"></div>
+    <h2>Where can you actually build the life you want?</h2>
+    <p>Every Tuesday: one destination analyzed across legal rights, safety, community, healthcare, and cost of living. Written for queer adults who are done browsing and ready to decide.</p>
+
+    <!--
+      MATT — BEEHIIV EMBED INSTRUCTIONS:
+      1. Log into Beehiiv → Settings → Newsletter → Embed
+      2. Copy the embed code (iframe version)
+      3. Replace the entire <div class="beehiiv-embed"> block below with that iframe
+      4. The iframe submits within itself — users stay on this page (Ad Grant compliant ✓)
+      5. If Beehiiv offers a "redirect after subscribe" setting, point it to /thank-you (same domain)
+
+      EXAMPLE of what the embed looks like:
+      <iframe src="https://embeds.beehiiv.com/YOUR-PUBLICATION-ID"
+        data-test-id="beehiiv-embed"
+        height="52" frameborder="0" scrolling="no"
+        style="width:100%; border:0; background:transparent;">
+      </iframe>
+    -->
+    <div class="beehiiv-embed">
+      <!-- PASTE BEEHIIV EMBED IFRAME HERE — Matt, see instructions above -->
+      <form class="subscribe-form-placeholder" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" class="email-input" />
+        <button type="submit" class="btn-primary" style="padding:14px 28px; font-size:15px;">Get free intelligence →</button>
+      </form>
+    </div>
+
+    <div class="subscribe-proof">
+      <span>7,500+ queer adults reading</span>
+      <span class="proof-dot">·</span>
+      <span>Free, always</span>
+      <span class="proof-dot">·</span>
+      <span>Nonprofit — we don't sell your data</span>
+    </div>
+    <p class="newsletter-qualifier">Unsubscribe anytime. No spam. No selling. We're a nonprofit — your inbox is not a product.</p>
+  </section>
+
+  <div class="rainbow-bar"></div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <p class="footer-mission">The PrideNomad Foundation produces free LGBTQ+ location and travel intelligence. We are a nonprofit. Our content is not sponsored and is never for sale.</p>
+      <p class="footer-copy">© 2026 PrideNomad Foundation. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

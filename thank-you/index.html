@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're in — PrideNomad Foundation</title>
+  <meta name="description" content="Thanks for subscribing to the PrideNomad Foundation newsletter. Free LGBTQ+ location intelligence every Tuesday.">
+  <meta name="robots" content="noindex">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FAFAF7; --warm-white: #FFFFFF; --ink: #1a1a2e;
+      --ink-secondary: #3d3d5c; --muted: #7a7a9a; --border: #e4e2d9;
+      --accent: #5B4FD4;
+      --rainbow: linear-gradient(90deg, #FF6B9D 0%, #C44DFF 22%, #4D79FF 44%, #00C896 66%, #FFD700 88%, #FF6B9D 100%);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; }
+    .rainbow-bar { height: 5px; background: var(--rainbow); width: 100%; }
+    header { background: var(--warm-white); border-bottom: 1px solid var(--border); }
+    .header-inner { max-width: 960px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { text-decoration: none; display: flex; flex-direction: column; gap: 1px; }
+    .logo-name { font-size: 17px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+    .logo-tag { font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 64px 24px; }
+    .thank-you { max-width: 560px; text-align: center; }
+    .check { font-size: 48px; margin-bottom: 24px; display: block; }
+    .thank-you h1 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; letter-spacing: -0.025em; color: var(--ink); line-height: 1.2; margin-bottom: 20px; }
+    .thank-you p { font-size: 18px; color: var(--ink-secondary); line-height: 1.65; margin-bottom: 16px; }
+    .thank-you .next { font-size: 15px; color: var(--muted); margin-bottom: 40px; }
+    .links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary { display: inline-block; background: var(--ink); color: var(--warm-white); font-size: 15px; font-weight: 700; letter-spacing: 0.04em; padding: 14px 32px; border-radius: 6px; text-decoration: none; }
+    .btn-primary:hover { background: var(--ink-secondary); }
+    .btn-secondary { display: inline-block; background: transparent; color: var(--ink-secondary); font-size: 15px; font-weight: 600; padding: 14px 32px; border-radius: 6px; text-decoration: none; border: 1px solid var(--border); }
+    .btn-secondary:hover { border-color: #c8c6bd; }
+    footer { border-top: 1px solid var(--border); background: var(--warm-white); }
+    .footer-inner { max-width: 960px; margin: 0 auto; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    .footer-copy { font-size: 12px; color: #b0afc8; }
+    @media (max-width: 680px) { .header-inner { flex-direction: column; gap: 16px; } }
+  </style>
+</head>
+<body>
+
+  <div class="rainbow-bar"></div>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-name">PrideNomad Foundation</span>
+        <span class="logo-tag">A nonprofit</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="thank-you">
+      <span class="check">🏳️‍🌈</span>
+      <h1>You're in.</h1>
+      <p>First issue lands in your inbox on Tuesday. One destination. Five dimensions. All sourced.</p>
+      <p class="next">While you wait — check out our most-read guides below, or explore the PrideNomad Index to compare destinations side by side.</p>
+      <div class="links">
+        <a href="/guides" class="btn-primary">Browse the guides →</a>
+        <a href="/" class="btn-secondary">Back to home</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="rainbow-bar"></div>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 PrideNomad Foundation. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
